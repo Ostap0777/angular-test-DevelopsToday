@@ -1,0 +1,33 @@
+<section class="section">
+	<div class="country__container">
+	  <a class="exit__content" href="/">
+		 <img class="country__exit" src="assets/img/free-icon-left-arrow-271218 (1).png" alt="Назад">
+	  </a>
+ 
+	  <div class="year__content">
+		 <label class="year__label" for="yearSelect">Виберіть рік:</label>
+		 <select class="year__select" id="yearSelect" [(ngModel)]="selectedYear" (ngModelChange)="onYearChange($event)">
+			<option class="year__option" *ngFor="let year of years" [value]="year">{{ year }}</option>
+		 </select>
+	  </div>
+ 
+	  <div *ngIf="countryName">
+		 <h1 class="country__name">{{ countryName }}</h1>
+	  </div>
+ 
+	  <div class="holiday__items">
+		 <div class="holiday__item" *ngFor="let holiday of holidays">
+			<p class="holiday__date">Дата: {{ holiday.date }}</p>
+			<p class="holiday__localname">Місцева назва: {{ holiday.localName }}</p>
+			<p class="holiday__name">Назва: {{ holiday.name }}</p>
+			<div *ngFor="let longWeekend of longWeekends">
+				<div *ngIf="isHolidayInLongWeekend(holiday, longWeekend)" class="longweekend__content">
+				  <p class="longweekend__startdata">Початок: {{ longWeekend.startDate }}</p>
+				  <p class="longweekend__finishdata">Кінець: {{ longWeekend.endDate }}</p>
+				  <p class="longweekend__days">Кількість днів: {{ longWeekend.dayCount }}</p>
+				</div>
+			 </div>
+		 </div>
+	  </div>
+	</div>
+</section>

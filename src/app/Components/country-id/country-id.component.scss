@@ -1,67 +1,126 @@
-*,
-*::before,
-*::after {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	box-sizing: border-box;
-}
-a {
-	text-decoration: none;
-	color: inherit;
-}
-ul,
-ol,
-li {
-	list-style: none;
-}
-img {
-	vertical-align: top;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: inherit;
-	font-size: inherit;
-}
-html,
-body {
-	height: 100%;
-	line-height: 1;
-	font-family: "Ubuntu", sans-serif;
+.section {
+	padding: 50px 0px;
 	background-image: repeating-linear-gradient(45deg, rgba(118, 118, 118, 0.05) 0px, rgba(118, 118, 118, 0.05) 19px,rgba(59, 59, 59, 0.05) 19px, rgba(59, 59, 59, 0.05) 67px,rgba(195, 195, 195, 0.05) 67px, rgba(195, 195, 195, 0.05) 87px,rgba(121, 121, 121, 0.05) 87px, rgba(121, 121, 121, 0.05) 133px,rgba(250, 250, 250, 0.05) 133px, rgba(250, 250, 250, 0.05) 172px,rgba(106, 106, 106, 0.05) 172px, rgba(106, 106, 106, 0.05) 197px,rgba(151, 151, 151, 0.05) 197px, rgba(151, 151, 151, 0.05) 226px,rgba(219, 219, 219, 0.05) 226px, rgba(219, 219, 219, 0.05) 260px),repeating-linear-gradient(45deg, rgba(70, 70, 70, 0.05) 0px, rgba(70, 70, 70, 0.05) 40px,rgba(220, 220, 220, 0.05) 40px, rgba(220, 220, 220, 0.05) 79px,rgba(95, 95, 95, 0.05) 79px, rgba(95, 95, 95, 0.05) 103px,rgba(15, 15, 15, 0.05) 103px, rgba(15, 15, 15, 0.05) 148px,rgba(51, 51, 51, 0.05) 148px, rgba(51, 51, 51, 0.05) 186px,rgba(225, 225, 225, 0.05) 186px, rgba(225, 225, 225, 0.05) 202px,rgba(60, 60, 60, 0.05) 202px, rgba(60, 60, 60, 0.05) 239px,rgba(67, 67, 67, 0.05) 239px, rgba(67, 67, 67, 0.05) 259px),repeating-linear-gradient(45deg, rgba(146, 146, 146, 0.05) 0px, rgba(146, 146, 146, 0.05) 40px,rgba(166, 166, 166, 0.05) 40px, rgba(166, 166, 166, 0.05) 54px,rgba(156, 156, 156, 0.05) 54px, rgba(156, 156, 156, 0.05) 71px,rgba(134, 134, 134, 0.05) 71px, rgba(134, 134, 134, 0.05) 95px,rgba(77, 77, 77, 0.05) 95px, rgba(77, 77, 77, 0.05) 111px,rgba(26, 26, 26, 0.05) 111px, rgba(26, 26, 26, 0.05) 153px,rgba(46, 46, 46, 0.05) 153px, rgba(46, 46, 46, 0.05) 202px,rgba(197, 197, 197, 0.05) 202px, rgba(197, 197, 197, 0.05) 216px),linear-gradient(90deg, rgb(30, 178, 248),rgb(46, 36, 197));
 }
-button,
-input {
-	font-weight: inherit;
-	font-size: inherit;
-	color: inherit;
-	font-family: inherit;
+.country {
+	&__container {
+
+	}
+	&__exit {
+		width: 30px;
+		height: 30px;
+		margin-bottom: 50px;
+	}
+	&__exit:hover {
+		opacity: 0.5;
+	}
 }
-button {
-	cursor: pointer;
-	background-color: inherit;
+.holiday {
+	&__items {
+		display: grid;
+		gap: 50px;
+		grid-template-columns: repeat(3, 1fr);
+		
+	}
+	&__item {
+      display: flex;
+      flex-direction: column;
+		gap: 5px;
+		color: #ffffff;
+		font-size: 20px;
+		padding: 10px;
+		background-color: rgb(255, 255, 255, 0.2);
+		border-radius: 20px;
+
+	}
+	&__date {
+		border-bottom: 2px solid rgb(88, 86, 217);
+		padding-bottom: 5px;
+	}
+	&__localname {
+		
+	}
+	&__name {
+
+	}
+}
+
+.exit {
+	&__content {
+
+	}
+}
+.year {
+	&__select {
+		font-size: 24px;
+	}
+	&__label {
+		font-size: 24px;
+		padding-right: 10px;
+
+		padding: 10px 10px;
+		border-radius: 50px;
+	}
+	&__content {
+		margin: 30px 0px;
+		text-align: right;
+		padding-right: 50px;
+	}
+	&__option {
+
+	}
+}
+.longweekend {
+	&__content {
+		padding-top: 20px;
+     display: flex; 
+     flex-direction: column;
+     gap: 10px;
+	  font-size: 16px;
+	  color: rgb(255, 255, 255);
+	}
+	&__startdata {
+
+	}
+	&__finishdata {
+
+	}
+	&__days {
+
+	}
 }
 
 
-[class*="__container"] {
-	max-width: 1310px;
-	margin: 0 auto;
-	padding: 0px 15px;
-}
-.wrapper {
-   position: relative;
- min-height: 100vh;
- display: flex;
- flex-direction: column;
- overflow: hidden;
-
+@media(max-width:900px) {
+	.holiday {
+		&__items {
+			display: grid;
+			gap: 30px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 }
 
-
-.swiper-wrapper {
-	display: flex;
-}
+@media(max-width:550px) {
+	.holiday {
+		&__items {
+			display: grid;
+			gap: 30px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	.year {
+		&__select {
+			font-size: 20px;
+		}
+		&__label {
+			font-size: 20px;
+		}
+	}
+	.longweekend {
+		&__content {
+		  gap:25px;
+		  font-size: 18px;
+		
+		}
+}}

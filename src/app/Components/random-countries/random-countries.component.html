@@ -1,0 +1,12 @@
+<section class="section">
+	<div class="random__container">
+	  <div class="random__items">
+		 <div [routerLink]="['/country', country.countryCode]" class="random__item" *ngFor="let country of countryHolidays">
+			<h3 class="item__country">{{ country.country }}</h3>
+			<p class="item__holiday">Найближче свято: {{ country.holidayName }}</p>
+			<p class="item__date">{{ country.holidayDate }}</p>
+		 </div>
+	  </div>
+	</div>
+ </section>
+ 

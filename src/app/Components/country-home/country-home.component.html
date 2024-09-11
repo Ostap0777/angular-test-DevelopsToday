@@ -1,0 +1,30 @@
+<section>
+	<app-random-countries></app-random-countries>
+	<div class="home__container">
+		 <div class="search__container">
+			<h2 class="search__title">Введіть назву країни</h2>
+			<form class="search__form" (ngSubmit)="filterCountries()">
+			  <input 
+				 class="search__input" 
+				 type="text" 
+				 [(ngModel)]="filterCountry" 
+				 name="filterCountry" 
+				 placeholder="Країна"
+				 (ngModelChange)="filterCountries()"
+			  >
+			</form>
+		 </div>
+	  <div class="home__list">
+		 <h2 class="home__title">Список Країн</h2>
+		 <div *ngIf="filteredCountries.length === 0" class="no__results">
+			Нічого не знайдено
+		 </div>
+		 <div class="home__items">
+			<div class="home__item" *ngFor="let country of filteredCountries">
+			  <a class="item__link" [routerLink]="['/country', country.countryCode]">{{ country.name }}</a>
+			</div>
+		 </div>
+	  </div>
+	</div>
+ </section>
+ 
