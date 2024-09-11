@@ -10,11 +10,7 @@
 			<option class="year__option" *ngFor="let year of years" [value]="year">{{ year }}</option>
 		 </select>
 	  </div>
- 
-	  <div *ngIf="countryName">
-		 <h1 class="country__name">{{ countryName }}</h1>
-	  </div>
- 
+		<p class="holiday__country"> {{countryCode}}</p>
 	  <div class="holiday__items">
 		 <div class="holiday__item" *ngFor="let holiday of holidays">
 			<p class="holiday__date">Дата: {{ holiday.date }}</p>

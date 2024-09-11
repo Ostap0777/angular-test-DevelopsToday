@@ -16,6 +16,7 @@ export class CountriesService {
   getAllCountries() {
 	return this.http.get<Country[]>(`${this.url}`)
   }
+  
 
   getCountry(year: number, countryCode: string) {
 	const url = `https://date.nager.at/api/v3/publicholidays/${year}/${countryCode}`;

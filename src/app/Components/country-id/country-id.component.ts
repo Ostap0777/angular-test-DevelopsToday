@@ -11,9 +11,9 @@ import { Holiday, LongWeekend } from 'src/app/models/models';
 })
 export class CountryIDComponent implements OnInit {
   countryName: string | null = null;
+  countryCode: string | null = null;
   holidays: Holiday[] = [];
   longWeekends: LongWeekend[] = [];
-  private countryCode: string | null = null;
   years: number[] = Array.from({ length: 11 }, (_, i) => 2020 + i);
   selectedYear: number = new Date().getFullYear(); 
 
